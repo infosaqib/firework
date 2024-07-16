@@ -795,6 +795,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -872,6 +877,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -910,5 +919,10 @@ video {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
