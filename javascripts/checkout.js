@@ -64,7 +64,7 @@ function updateFooterTotal() {
 
 function toggleLocationRow() {
     const locationRow = document.getElementById('locationRow');
-    locationRow.classList.toggle('hidden');
+    locationRow.classList.remove('hidden');
 }
 
 
