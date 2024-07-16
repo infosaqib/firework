@@ -1,6 +1,8 @@
+let totalPrice = document.getElementById('totalPrice')
+let subTotalPrice = document.getElementById('subtotalPrice')
+let shippingPrice = document.getElementById('shippingPrice')
 function totalCheckoutPrice() {
-    document.getElementById('totalPrice').innerText =  ( document.getElementById('subtotalPrice').innerText) + ( document.getElementById('discountPrice').innerText) + ( document.getElementById('shippingPrice').innerText)
-
+totalPrice.innerText = `Rs ${parseFloat(subTotalPrice.innerText.replace('Rs ', '')) + parseFloat(shippingPrice.innerText.replace('Rs ', ''))}`
 }
 function toggleLocationRow() {
     const locationRow = document.getElementById('locationRow');
