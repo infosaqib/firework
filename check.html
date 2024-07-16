@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/util.css">
+    <title>Checkout Page</title>
+</head>
+<body>
+    <div id="hero" class="flex justify-center items-center">
+        <h1 class="text-white font-bold text-3xl w-2/3 tracking-wider text-center">Check your order and enter Address with your active Whatsapp no for better communication</h1>
+    </div>
+    <div class="p-12">
+        <h2 class="text-black font-bold text-xl w-2/3 tracking-wider text-center">Order Details [Minimum of Rs.3000]</h2>
+        <hr class="my-6">
+        <table class="min-w-full bg-white">
+            <thead class="bg-red-500 text-white">
+                <tr>
+                    <th class="border w-1/6 py-2">Serial</th>
+                    <th class="border w-1/6 py-2">Photo</th>
+                    <th class="border w-1/6 py-2">Name</th>
+                    <th class="border w-1/6 py-2">Price</th>
+                    <th class="border w-1/6 py-2">Fill Quantity</th>
+                    <th class="border w-1/6 py-2">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+            <tfoot class="bg-red-500">
+                <tr>
+                    <td colspan="5" class="border px-4 py-2 text-center text-white font-semibold">Total</td>
+                    <td colspan="1" class="border px-4 py-2 text-center text-white font-semibold">Rs. 0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- Form for Shipping Address -->
+    <form action="">
+        <div class="p-12">
+            <h2 class="text-black font-bold text-xl w-2/3 tracking-wider text-center">Shipping Address</h2>
+            <hr class="my-6">
+            <div class="flex flex-col md:flex-row gap-8">
+                <table class="w-full bg-white">
+                    <tbody>
+                        <tr class="bg-gray-100">
+                            <td class="border px-4 py-2 font-semibold">Full Name</td>
+                            <td class="border px-4 py-2"><input type="text" class="w-full outline-0 p-2 border rounded-sm" placeholder="Enter your name" class="font-semibold" required></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border px-4 py-2 font-semibold">Email Address</td>
+                            <td class="border px-4 py-2"><input type="email" class="w-full outline-0 p-2 border rounded-sm" placeholder="Enter your email address" class="font-semibold" required></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="border px-4 py-2 font-semibold">Phone Number</td>
+                            <td class="border px-4 py-2"><input type="tel" class="w-full outline-0 p-2 border rounded-sm" placeholder="Enter your phone number" class="font-semibold" required></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border px-4 py-2 font-semibold">Address</td>
+                            <td class="border px-4 py-2"><input type="text" class="w-full outline-0 p-2 border rounded-sm" placeholder="Enter your address" class="font-semibold" required></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="border px-4 py-2 font-semibold">Shipping Type</td>
+                            <td class="border px-4 py-2">
+                                <label class="font-semibold mx-4 cursor-pointer"><input type="radio" name="shipping" value="office" class="mr-2" onchange="toggleLocationRow()" required>Office Delivery</label>
+                                <label class="font-semibold mx-4 cursor-pointer"><input type="radio" name="shipping" value="door" class="mr-2" onchange="toggleLocationRow()" required>Door Delivery</label>
+                            </td>
+                        </tr>
+                        <tr id="locationRow" class="bg-white hidden">
+                            <td class="border px-4 py-2 font-semibold">State / City / Zip Code</td>
+                            <td class="border px-4 py-2 flex flex-col gap-y-2">
+                                <select class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer" placeholder="Select City">
+                                    <option value="" disabled selected>Select City</option>
+                                    <option value="karachi">Karachi</option>
+                                    <option value="lahore">Lahore</option>
+                                    <option value="islamabad">Islamabad</option>
+                                    <option value="rawalpindi">Rawalpindi</option>
+                                    <option value="faisalabad">Faisalabad</option>
+                                    <option value="multan">Multan</option>
+                                    <option value="peshawar">Peshawar</option>
+                                    <option value="quetta">Quetta</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <select class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer" placeholder="Select State">
+                                    <option value="" disabled selected>Select State</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="sindh">Sindh</option>
+                                    <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                                    <option value="balochistan">Balochistan</option>
+                                    <option value="gilgit-baltistan">Gilgit-Baltistan</option>
+                                    <option value="azad-jammu-kashmir">Azad Jammu & Kashmir</option>
+                                </select>
+                                <input type="text" class="w-full outline-0 p-2 border rounded-sm" placeholder="Zip Code" required>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="w-full bg-white">
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="border px-4 py-2 font-semibold">Subtotal</td>
+                            <td id="subtotalPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for subtotal -->
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border px-4 py-2 font-semibold">Shipping</td>
+                            <td id="shippingPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for shipping -->
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border px-4 py-2 font-semibold">Discount</td>
+                            <td id="discountPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for discount -->
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border px-4 py-2 font-semibold">Coupon(-)</td>
+                            <td id="couponPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for coupon -->
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border px-4 py-2 font-semibold">Total</td>
+                            <td id="totalPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for total -->
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="text-sm text-red-500 font-semibold my-6 mx-2">Notes : COD Not Available!, Card Payments Contact- +1234567890</h3>
+        </div>
+        <div class="flex flex-col justify-center items-end pr-14 pb-6">
+            <div>
+                <a href="#" id="backToHome"><button class="bg-red-500 py-2 m-3 px-6 text-white text-xl rounded-md text-center cursor-pointer">Back</button></a>
+                <input type="submit" class="bg-red-500 py-2 m-3 px-6 text-white text-xl rounded-md text-center cursor-pointer" value="Submit">
+                <input type="submit" class="bg-red-500 py-2 m-3 px-6 text-white text-xl rounded-md text-center cursor-pointer" value="Continue Shopping ->">
+            </div>
+        </div>
+    </form>
+    <script src="javascripts/checkout.js"></script>
+</body>
+</html>
