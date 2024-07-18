@@ -34,9 +34,10 @@ function updateProduct(element) {
 }
 
 function alertAmount() {
-    if (totalCheck.value < 3000) {
-        alert("Minimum purchase amount ₹3000");
-        return false;
+    if (totalCheck.value == 0) {
+        alert("Add item here");
+    } else if (totalCheck.value < 3000) {
+        alert('Minimum purchase amount ₹3000')
     }
 }
 
