@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function loadProductDetails() {
     let totalDiscount = 0;
     const products = JSON.parse(localStorage.getItem('products')) || [];
+    
+    
     const tbody = document.querySelector('table tbody');
     tbody.innerHTML = ''; // Clear existing rows
 
@@ -70,7 +72,7 @@ function toggleLocationRow() {
 
 //Dynamic Receipt
 // Handle shipping price based on city selection
-const shippingSelect = document.querySelector('select[placeholder="Select City"]');
+const shippingSelect = document.querySelector('select[placeholder="City"]');
 shippingSelect.addEventListener('change', () => {
     const selectedCity = shippingSelect.value;
     const shippingPrice = selectedCity ? 200 : 0;
