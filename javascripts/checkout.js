@@ -2,7 +2,7 @@ let totalPrice = document.getElementById('totalPrice')
 let subTotalPrice = document.getElementById('subtotalPrice')
 let shippingPrice = document.getElementById('shippingPrice')
 function totalCheckoutPrice() {
-totalPrice.innerText = `Rs ${parseFloat(subTotalPrice.innerText.replace('Rs ', '')) + parseFloat(shippingPrice.innerText.replace('Rs ', ''))}`
+totalPrice.innerText = `₹ ${parseFloat(subTotalPrice.innerText.replace('₹ ', '')) + parseFloat(shippingPrice.innerText.replace('₹ ', ''))}`
 }
 function toggleLocationRow() {
     const locationRow = document.getElementById('locationRow');
@@ -37,12 +37,12 @@ function loadProductDetails() {
             <td class="border px-4 py-2 text-center">${index + 1}</td>
             <td class="border px-4 py-2">${product.photo}</td>
             <td class="border px-4 py-2 text-center">${product.name}</td>
-            <td class="border px-4 py-2 text-center">Rs. ${product.price}</td>
+            <td class="border px-4 py-2 text-center">₹ ${product.price}</td>
             <td class="border px-4 py-2 text-center">${product.quantity}</td>
-            <td class="border px-4 py-2 text-center">Rs. ${product.total}</td>
+            <td class="border px-4 py-2 text-center">₹ ${product.total}</td>
         `;
         totalDiscount +=  (product.actualPrice - product.price) * product.quantity;
-        document.getElementById('discountPrice').innerText = `Rs ${totalDiscount}`;
+        document.getElementById('discountPrice').innerText = `₹ ${totalDiscount}`;
         totalCheckoutPrice()
         tbody.appendChild(tr);
     });
@@ -54,12 +54,12 @@ function updateFooterTotal() {
     const totalCells = document.querySelectorAll('tbody tr td:last-child');
     let grandTotal = 0;
     totalCells.forEach(cell => {
-        grandTotal += parseFloat(cell.innerText.replace('Rs. ', '').replace(',', '')) || 0;
+        grandTotal += parseFloat(cell.innerText.replace('₹ ', '').replace(',', '')) || 0;
     });
 
     const totalFooter = document.querySelector('tfoot td:last-child');
-    totalFooter.innerText = `Rs. ${grandTotal}`;
-    document.getElementById('subtotalPrice').innerText = `Rs ${grandTotal}`;
+    totalFooter.innerText = `₹ ${grandTotal}`;
+    document.getElementById('subtotalPrice').innerText = `₹ ${grandTotal}`;
     totalCheckoutPrice()
 
 }
@@ -72,10 +72,16 @@ function toggleLocationRow() {
 
 //Dynamic Receipt
 // Handle shipping price based on city selection
-const shippingSelect = document.querySelector('select[placeholder="City"]');
-shippingSelect.addEventListener('change', () => {
+const shippingSelect = document.querySelector('input[placeholder="City"]');
+shippingSelect.addEventListener('input', () => {
     const selectedCity = shippingSelect.value;
     const shippingPrice = selectedCity ? 200 : 0;
-    document.getElementById('shippingPrice').innerText = `Rs ${shippingPrice}`;
+    document.getElementById('shippingPrice').innerText = `₹ ${shippingPrice}`;
     totalCheckoutPrice()
 });
+
+//VALIDATION
+
+function validatePhone(input) {
+    input.value = input.value.replace(/[^0-9+]/g, '');
+}

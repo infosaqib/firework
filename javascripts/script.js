@@ -1,7 +1,7 @@
 function updateTotal(element) {
     const quantity = element.value;
     const row = element.closest('tr');
-    const discountPrice = parseFloat(row.children[4].innerText.replace('Rs. ', '').replace(',', ''));
+    const discountPrice = parseFloat(row.children[4].innerText.replace('₹ ', '').replace(',', ''));
     const totalCell = row.children[6].children[0];
     totalCell.value = (quantity * discountPrice);
 
@@ -33,11 +33,13 @@ function updateProduct(element) {
     }
 }
 
-function alertAmount() {
+function alertAmount(event) {
     if (totalCheck.value == 0) {
         alert("Add item here");
     } else if (totalCheck.value < 3000) {
         alert('Minimum purchase amount ₹3000')
+    } else{
+        window.location.href = 'check.html'
     }
 }
 
@@ -45,8 +47,8 @@ function saveProductDetails(row, quantity) {
     const product = {
         photo: row.children[0].innerHTML,
         name: row.children[1].innerText,
-        price: parseFloat(row.children[4].innerText.replace('Rs. ', '').replace(',', '')),
-        actualPrice: parseFloat(row.children[3].innerText.replace('Rs. ', '').replace(',', '')),
+        price: parseFloat(row.children[4].innerText.replace('₹ ', '').replace(',', '')),
+        actualPrice: parseFloat(row.children[3].innerText.replace('₹ ', '').replace(',', '')),
         quantity: quantity,
         total: row.children[6].children[0].value
     };

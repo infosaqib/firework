@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <title>Checkout Page</title>
-<style>
-* {
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+          * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,9 +36,13 @@ body {
 ::before,
 ::after {
   box-sizing: border-box;
+  /* 1 */
   border-width: 0;
+  /* 2 */
   border-style: solid;
+  /* 2 */
   border-color: #e5e7eb;
+  /* 2 */
 }
 
 ::before,
@@ -46,38 +50,76 @@ body {
   --tw-content: '';
 }
 
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
 html,
 :host {
   line-height: 1.5;
+  /* 1 */
   -webkit-text-size-adjust: 100%;
+  /* 2 */
   -moz-tab-size: 4;
+  /* 3 */
   -o-tab-size: 4;
      tab-size: 4;
+  /* 3 */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
   font-feature-settings: normal;
+  /* 5 */
   font-variation-settings: normal;
+  /* 6 */
   -webkit-tap-highlight-color: transparent;
+  /* 7 */
 }
 
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
 
 body {
   margin: 0;
+  /* 1 */
   line-height: inherit;
+  /* 2 */
 }
 
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
 
 hr {
   height: 0;
+  /* 1 */
   color: inherit;
+  /* 2 */
   border-top-width: 1px;
+  /* 3 */
 }
 
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
 }
 
+/*
+Remove the default font size and weight for headings.
+*/
 
 h1,
 h2,
@@ -89,32 +131,56 @@ h6 {
   font-weight: inherit;
 }
 
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
 
 a {
   color: inherit;
   text-decoration: inherit;
 }
 
+/*
+Add the correct font weight in Edge and Safari.
+*/
 
 b,
 strong {
   font-weight: bolder;
 }
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
 code,
 kbd,
 samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
   font-feature-settings: normal;
+  /* 2 */
   font-variation-settings: normal;
+  /* 3 */
   font-size: 1em;
+  /* 4 */
 }
 
+/*
+Add the correct font size in all browsers.
+*/
 
 small {
   font-size: 80%;
 }
 
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
 
 sub,
 sup {
@@ -132,13 +198,26 @@ sup {
   top: -0.5em;
 }
 
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
 
 table {
   text-indent: 0;
+  /* 1 */
   border-color: inherit;
+  /* 2 */
   border-collapse: collapse;
+  /* 3 */
 }
 
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
 
 button,
 input,
@@ -146,76 +225,129 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
+  /* 1 */
   font-feature-settings: inherit;
+  /* 1 */
   font-variation-settings: inherit;
+  /* 1 */
   font-size: 100%;
+  /* 1 */
   font-weight: inherit;
+  /* 1 */
   line-height: inherit;
+  /* 1 */
   letter-spacing: inherit;
+  /* 1 */
   color: inherit;
+  /* 1 */
   margin: 0;
+  /* 2 */
   padding: 0;
+  /* 3 */
 }
 
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
 
 button,
 select {
   text-transform: none;
 }
 
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
 
 button,
 input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
   -webkit-appearance: button;
+  /* 1 */
   background-color: transparent;
+  /* 2 */
   background-image: none;
+  /* 2 */
 }
 
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
 
 :-moz-focusring {
   outline: auto;
 }
 
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
 
 :-moz-ui-invalid {
   box-shadow: none;
 }
 
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
 
 progress {
   vertical-align: baseline;
 }
 
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
 }
 
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
 
 [type='search'] {
   -webkit-appearance: textfield;
+  /* 1 */
   outline-offset: -2px;
+  /* 2 */
 }
 
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
 
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
+  /* 1 */
   font: inherit;
+  /* 2 */
 }
 
+/*
+Add the correct display in Chrome and Safari.
+*/
 
 summary {
   display: list-item;
 }
 
+/*
+Removes the default spacing and border for appropriate elements.
+*/
 
 blockquote,
 dl,
@@ -250,39 +382,64 @@ menu {
   padding: 0;
 }
 
+/*
+Reset default styling for dialogs.
+*/
 
 dialog {
   padding: 0;
 }
 
+/*
+Prevent resizing textareas horizontally by default.
+*/
 
 textarea {
   resize: vertical;
 }
 
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
 
 input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
+  /* 1 */
   color: #9ca3af;
+  /* 2 */
 }
 
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
+  /* 1 */
   color: #9ca3af;
+  /* 2 */
 }
 
+/*
+Set the default cursor for buttons.
+*/
 
 button,
 [role="button"] {
   cursor: pointer;
 }
 
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
 
 :disabled {
   cursor: default;
 }
 
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
 
 img,
 svg,
@@ -293,9 +450,14 @@ iframe,
 embed,
 object {
   display: block;
+  /* 1 */
   vertical-align: middle;
+  /* 2 */
 }
 
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
 
 img,
 video {
@@ -303,6 +465,7 @@ video {
   height: auto;
 }
 
+/* Make elements with the HTML hidden attribute stay hidden by default */
 
 [hidden] {
   display: none;
@@ -416,6 +579,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .collapse {
   visibility: collapse;
 }
@@ -475,6 +642,10 @@ video {
 
 .table {
   display: table;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -646,6 +817,11 @@ video {
   border-width: 2px;
 }
 
+.border-blue-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(29 78 216 / var(--tw-border-opacity));
+}
+
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
@@ -664,11 +840,6 @@ video {
 .border-red-600 {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
-}
-
-.border-blue-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(29 78 216 / var(--tw-border-opacity));
 }
 
 .bg-gray-100 {
@@ -901,7 +1072,7 @@ video {
   }
 }
 
-</style>
+        </style>
 </head>
 
 <body>
@@ -911,7 +1082,7 @@ video {
     </div>
     <div class="p-12 ">
         <h2 class="text-black font-bold text-lg md:text-xl md:w-2/3 tracking-wider text-center">Order Details [Minimum
-            of Rs.3000]</h2>
+            of ₹3000]</h2>
         <hr class="my-6">
         <div class="overflow-x-auto md:overflow-x-hidden">
             <div class="imgContent border-2">
@@ -932,7 +1103,7 @@ video {
                     <tfoot class="bg-red-500">
                         <tr>
                             <td colspan="5" class="border px-4 py-2 text-center text-white font-semibold">Total</td>
-                            <td colspan="1" class="border px-4 py-2 text-center text-white font-semibold">Rs. 0</td>
+                            <td colspan="1" class="border px-4 py-2 text-center text-white font-semibold">₹ 0</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -960,8 +1131,8 @@ video {
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Phone Number</td>
-                            <td class="border px-4 py-2"><input type="tel" id="phone"
-                                    class="w-full outline-0 p-2 border rounded-sm" class="font-semibold" required></td>
+                            <td class="border px-4 py-2"><input type="tel" id="phone" pattern="[0-9+]*"
+                                 oninput="validatePhone(this);"   class="w-full outline-0 p-2 border rounded-sm" class="font-semibold" required></td>
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Address</td>
@@ -971,41 +1142,55 @@ video {
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Shipping Type</td>
                             <td class="border px-4 py-2">
-                                <label class="font-semibold mx-4 cursor-pointer"><input type="radio" id="shipping"
-                                        value="office" class="mr-2" onchange="toggleLocationRow()" required>Office
-                                    Delivery</label>
-                                <label class="font-semibold mx-4 cursor-pointer"><input type="radio" id="shipping"
-                                        value="door" class="mr-2" onchange="toggleLocationRow()" required>Door
-                                    Delivery</label>
+                                <label class="font-semibold mx-4 cursor-pointer">
+                                    <input type="radio" name="shipping" value="office" class="mr-2" onchange="toggleLocationRow()" required>Office Delivery
+                                </label>
+                                <label class="font-semibold mx-4 cursor-pointer">
+                                    <input type="radio" name="shipping" value="door" class="mr-2" onchange="toggleLocationRow()" required>Door Delivery
+                                </label>
+                                
                             </td>
                         </tr>
                         <tr id="locationRow" class="bg-white hidden">
                             <td class="border px-4 py-2 font-semibold">State / City / Zip Code</td>
                             <td class="border px-4 py-2 flex flex-col gap-y-2">
-                                <select class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer"
+                                <input class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer"
                                     placeholder="City" id="city">
-                                    <option value="" disabled selected>City</option>
-                                    <option value="new mhjehli">New Dehli</option>
-                                    <option value="Mumbai">Mumbai</option>
-                                    <option value="Bengaluru">Bengaluru</option>
-                                    <option value="Chennai">Chennai</option>
-                                    <option value="Hyderabad">Hyderabad</option>
-                                    <option value="Kolkata">Kolkata</option>
-                                    <option value="Jaipur">Jaipur</option>
-                                    <option value="ahmedabad">Ahmedabad</option>
-                                    <option value="other">Other</option>
-                                </select>
                                 <select class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer"
                                     placeholder="State" id="state">
                                     <option value="" disabled selected>State</option>
-                                    <option value="punjab">Punjab</option>
-                                    <option value="sindh">Sindh</option>
-                                    <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa</option>
-                                    <option value="balochistan">Balochistan</option>
-                                    <option value="gilgit-baltistan">Gilgit-Baltistan</option>
-                                    <option value="azad-jammu-kashmir">Azad Jammu & Kashmir</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
                                 </select>
-                                <input type="number" id="zip" class=" w-full outline-0 p-2 border rounded-sm"
+                                <input type="number" id="zip" max="7" class=" w-full outline-0 p-2 border rounded-sm"
                                     placeholder="Zip Code" required>
                             </td>
                         </tr>
@@ -1015,23 +1200,23 @@ video {
                     <tbody id="secondTbody">
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Subtotal</td>
-                            <td id="subtotalPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for subtotal -->
+                            <td id="subtotalPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for subtotal -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Shipping</td>
-                            <td id="shippingPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for shipping -->
+                            <td id="shippingPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for shipping -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Discount</td>
-                            <td id="discountPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for discount -->
+                            <td id="discountPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for discount -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Coupon(-)</td>
-                            <td id="couponPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for coupon -->
+                            <td id="couponPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for coupon -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Total</td>
-                            <td id="totalPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for total -->
+                            <td id="totalPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for total -->
                         </tr>
 
                     </tbody>
@@ -1039,8 +1224,8 @@ video {
             </div>
 
 
-            <h3 class="text-sm text-red-500 font-semibold my-6 mx-2">Notes : COD Not Available!, Card Payments Contact-
-                +1234567890</h3>
+            <h3 class="text-sm text-red-500 font-semibold my-6 mx-2">Notes : COD Not Available, Card Payments Contact: 
+                +91&nbsp;9988735678</h3>
         </div>
         <div class="flex flex-col justify-center items-center md:items-end md:pr-14 pb-6">
             <div class="flex flex-col justify-center items-center md:items-end md:pr-14 pb-6">
@@ -1053,15 +1238,107 @@ video {
                             value="Submit">
                     </div>
                 </div>
-                <input type="submit" id="sendEmailButton"
+                <input type="submit" id="sendBack"
                     class="bg-red-500 py-2 m-3 px-6 text-white text-xl rounded-md text-center cursor-pointer"
                     value="Continue Shopping ->">
             </div>
         </div>
     </form>
-<script>
+    <script>
+      //------------------------------- Checkout Js File
+      let totalPrice = document.getElementById('totalPrice')
+let subTotalPrice = document.getElementById('subtotalPrice')
+let shippingPrice = document.getElementById('shippingPrice')
+function totalCheckoutPrice() {
+totalPrice.innerText = `₹ ${parseFloat(subTotalPrice.innerText.replace('₹ ', '')) + parseFloat(shippingPrice.innerText.replace('₹ ', ''))}`
+}
+function toggleLocationRow() {
+    const locationRow = document.getElementById('locationRow');
+    locationRow.classList.remove('hidden');
+}
 
-//---------------------------Mail.js code-----------------------
+
+document.getElementById('backToHome').addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'https://ssfireworks.in/product-list/'
+})
+document.getElementById('sendBack').addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'https://ssfireworks.in/product-list/'
+})
+
+//Dynamic Checkout
+document.addEventListener('DOMContentLoaded', function () {
+    loadProductDetails();
+});
+
+
+function loadProductDetails() {
+    let totalDiscount = 0;
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    
+    
+    const tbody = document.querySelector('table tbody');
+    tbody.innerHTML = ''; // Clear existing rows
+
+    products.forEach((product, index) => {
+        const tr = document.createElement('tr');
+        tr.className = index % 2 === 0 ? 'bg-gray-100' : 'bg-white';
+
+        tr.innerHTML = `
+            <td class="border px-4 py-2 text-center">${index + 1}</td>
+            <td class="border px-4 py-2">${product.photo}</td>
+            <td class="border px-4 py-2 text-center">${product.name}</td>
+            <td class="border px-4 py-2 text-center">₹ ${product.price}</td>
+            <td class="border px-4 py-2 text-center">${product.quantity}</td>
+            <td class="border px-4 py-2 text-center">₹ ${product.total}</td>
+        `;
+        totalDiscount +=  (product.actualPrice - product.price) * product.quantity;
+        document.getElementById('discountPrice').innerText = `₹ ${totalDiscount}`;
+        totalCheckoutPrice()
+        tbody.appendChild(tr);
+    });
+
+    updateFooterTotal();
+}
+
+function updateFooterTotal() {
+    const totalCells = document.querySelectorAll('tbody tr td:last-child');
+    let grandTotal = 0;
+    totalCells.forEach(cell => {
+        grandTotal += parseFloat(cell.innerText.replace('₹ ', '').replace(',', '')) || 0;
+    });
+
+    const totalFooter = document.querySelector('tfoot td:last-child');
+    totalFooter.innerText = `₹ ${grandTotal}`;
+    document.getElementById('subtotalPrice').innerText = `₹ ${grandTotal}`;
+    totalCheckoutPrice()
+
+}
+
+function toggleLocationRow() {
+    const locationRow = document.getElementById('locationRow');
+    locationRow.classList.remove('hidden');
+}
+
+
+//Dynamic Receipt
+// Handle shipping price based on city selection
+const shippingSelect = document.querySelector('input[placeholder="City"]');
+shippingSelect.addEventListener('input', () => {
+    const selectedCity = shippingSelect.value;
+    const shippingPrice = selectedCity ? 200 : 0;
+    document.getElementById('shippingPrice').innerText = `₹ ${shippingPrice}`;
+    totalCheckoutPrice()
+});
+
+//VALIDATION
+
+function validatePhone(input) {
+    input.value = input.value.replace(/[^0-9+]/g, '');
+}
+
+//------------------------------MAIL JS FILE
 // Initialize EmailJS
 emailjs.init('hj0ktJGt8eMelJAtC');
 
@@ -1141,90 +1418,9 @@ console.log(templateParams);
             alert('Something went wrong')
         });
 });
-//---------------------------------Checkout.js code--------------------------------------------------
-let totalPrice = document.getElementById('totalPrice')
-let subTotalPrice = document.getElementById('subtotalPrice')
-let shippingPrice = document.getElementById('shippingPrice')
-function totalCheckoutPrice() {
-totalPrice.innerText = `Rs ${parseFloat(subTotalPrice.innerText.replace('Rs ', '')) + parseFloat(shippingPrice.innerText.replace('Rs ', ''))}`
-}
-function toggleLocationRow() {
-    const locationRow = document.getElementById('locationRow');
-    locationRow.classList.remove('hidden');
-}
 
-
-document.getElementById('backToHome').addEventListener('click', (event) => {
-    event.preventDefault();
-    window.location.href = 'index.html'
-})
-
-//Dynamic Checkout
-document.addEventListener('DOMContentLoaded', function () {
-    loadProductDetails();
-});
-
-
-function loadProductDetails() {
-    let totalDiscount = 0;
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    
-    
-    const tbody = document.querySelector('table tbody');
-    tbody.innerHTML = ''; // Clear existing rows
-
-    products.forEach((product, index) => {
-        const tr = document.createElement('tr');
-        tr.className = index % 2 === 0 ? 'bg-gray-100' : 'bg-white';
-
-        tr.innerHTML = `
-            <td class="border px-4 py-2 text-center">${index + 1}</td>
-            <td class="border px-4 py-2">${product.photo}</td>
-            <td class="border px-4 py-2 text-center">${product.name}</td>
-            <td class="border px-4 py-2 text-center">Rs. ${product.price}</td>
-            <td class="border px-4 py-2 text-center">${product.quantity}</td>
-            <td class="border px-4 py-2 text-center">Rs. ${product.total}</td>
-        `;
-        totalDiscount +=  (product.actualPrice - product.price) * product.quantity;
-        document.getElementById('discountPrice').innerText = `Rs ${totalDiscount}`;
-        totalCheckoutPrice()
-        tbody.appendChild(tr);
-    });
-
-    updateFooterTotal();
-}
-
-function updateFooterTotal() {
-    const totalCells = document.querySelectorAll('tbody tr td:last-child');
-    let grandTotal = 0;
-    totalCells.forEach(cell => {
-        grandTotal += parseFloat(cell.innerText.replace('Rs. ', '').replace(',', '')) || 0;
-    });
-
-    const totalFooter = document.querySelector('tfoot td:last-child');
-    totalFooter.innerText = `Rs. ${grandTotal}`;
-    document.getElementById('subtotalPrice').innerText = `Rs ${grandTotal}`;
-    totalCheckoutPrice()
-
-}
-
-function toggleLocationRow() {
-    const locationRow = document.getElementById('locationRow');
-    locationRow.classList.remove('hidden');
-}
-
-
-//Dynamic Receipt
-// Handle shipping price based on city selection
-const shippingSelect = document.querySelector('select[placeholder="City"]');
-shippingSelect.addEventListener('change', () => {
-    const selectedCity = shippingSelect.value;
-    const shippingPrice = selectedCity ? 200 : 0;
-    document.getElementById('shippingPrice').innerText = `Rs ${shippingPrice}`;
-    totalCheckoutPrice()
-});
-</script>
-
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 
 </html>

@@ -2,100 +2,216 @@
 <html lang="en">
 
 <head>
-    <meta chaRs.et="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <link rel="stylesheet" href="stylesheets/util.css">
-    <title>Products List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="stylesheets/util.css">
+        <title>Products List</title>
 </head>
 
 <body>
-    <div id="hero" class="flex justify-center items-center">
-        <h1 class="text-white font-bold text-2xl md:text-4xl tracking-wider text-center">List of Products</h1>
-    </div>
-    <div class="flex flex-col md:flex-row justify-center items-center gap-2 bg-yellow-400 py-2 sticky top-0">
-        <div class="flex flex-row items-center justify-center gap-x-4">
-            <label for="product" class="text-black text-lg font-semibold">Products</label>
-            <input id="totalProducts" type="number" name="product" readonly value="0"
-                class="text-center w-1/3 text-black text-lg font-semibold bg-white outline-0 border-2 border-gray-400 rounded p-1">
+        <div id="hero" class="flex justify-center items-center">
+                <h1 class="text-white font-bold text-2xl md:text-4xl tracking-wider text-center">List of Products</h1>
         </div>
-        <div class="flex flex-row items-center justify-center gap-x-4"><label for="total" class="text-black text-lg font-semibold">Total Price</label>
-            <input id="totalCheck" type="number" name="total" readonly value="0"
-                class="text-center w-1/3 text-black text-lg font-semibold bg-white outline-0 border-2 border-gray-400 rounded p-1">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-2 bg-yellow-400 py-2 sticky top-0">
+                <div class="flex flex-row items-center justify-center gap-x-4">
+                        <label for="product" class="text-black text-lg font-semibold">Products</label>
+                        <input id="totalProducts" type="number" name="product" readonly value="0"
+                                class="text-center w-1/3 text-black text-lg font-semibold bg-white outline-0 border-2 border-gray-400 rounded p-1">
+                </div>
+                <div class="flex flex-row items-center justify-center gap-x-4"><label for="total"
+                                class="text-black text-lg font-semibold">Total Price</label>
+                        <input id="totalCheck" type="number" name="total" readonly value="0"
+                                class="text-center w-1/3 text-black text-lg font-semibold bg-white outline-0 border-2 border-gray-400 rounded p-1">
+                </div>
         </div>
-    </div>
-    <div class=" mx-auto my-8">
-        <div class="overflow-x-auto md:overflow-x-hidden">
-            <table class="min-w-full bg-white">
-                <thead class="bg-red-600 text-white">
-                    <tr>
-                        <th class="border w-1/7 p-2">Photo</th>
-                        <th class="border w-1/7 p-2">Name</th>
-                        <th class="border w-1/7 p-2">Content</th>
-                        <th class="border w-1/7 p-2">Actual Price</th>
-                        <th class="border w-1/7 p-2">Discount Price</th>
-                        <th class="border w-1/7 p-2">Quantity</th>
-                        <th class="border w-1/7 p-2">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-yellow-400">
-                        <td class="text-center py-2 uppercase text-lg translate-x-3 font-semibold" colspan="7">Sparklers
-                        </td>
-                    </tr>
-                    <tr class="bg-white">
-                        <td class="border px-2 md:px-4 py-2 flex items-center justify-center"><img class="size-12 md:size-24" src="./images/product-featured-26.jpg" alt="Sparkler" class="w-16 h-16"></td>
-                        <td class="border px-2 md:px-4 py-2 text-center">Sparkler A</td>
-                        <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
-                        <td class="border px-2 md:px-4 py-2 text-center strike-through">Rs. <span class="line-through">100</span></td>
-                        <td class="border px-2 md:px-4 py-2 text-center">Rs. 80 </td>
-                        <td class="border px-2 text-center"><input type="number"
-                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12  mx-auto"
-                                value="0" min="0" oninput="updateTotal(this);updateProduct(this)"></td>
-                        <td class="border px-2 text-center "><input type="number"
-                                class="text-center  border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
-                                value="0" readonly></td>
-                    </tr>
+        <div class=" mx-auto my-8">
+                <div class="overflow-x-auto md:overflow-x-hidden">
+                        <table class="min-w-full bg-white">
+                                <thead class="bg-red-600 text-white">
+                                        <tr>
+                                                <th class="border w-1/7 p-2">Photo</th>
+                                                <th class="border w-1/7 p-2">Name</th>
+                                                <th class="border w-1/7 p-2">Content</th>
+                                                <th class="border w-1/7 p-2">Actual Price</th>
+                                                <th class="border w-1/7 p-2">Discount Price</th>
+                                                <th class="border w-1/7 p-2">Quantity</th>
+                                                <th class="border w-1/7 p-2">Total</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr class="bg-yellow-400">
+                                                <td class="text-center py-2 uppercase text-lg translate-x-3 font-semibold"
+                                                        colspan="7">Sparklers
+                                                </td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-26.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">BOBY GOLD SPARKLERS
+                                                        7CM(10pcs)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">40</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 20 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12  mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center "><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
 
 
-                    <tr class="bg-white">
-                        <td class="border px-2 md:px-4 py-2 flex items-center justify-center"><img class="size-12 md:size-24" src="./images/product-featured-111.jpg" alt="Sparkler" class="w-16 h-16"></td>
-                        <td class="border px-2 md:px-4 py-2 text-center">Sparkler C</td>
-                        <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
-                        <td class="border px-2 md:px-4 py-2 text-center strike-through">Rs. <span class="line-through">200</span></td>
-                        <td class="border px-2 md:px-4 py-2 text-center">Rs. 160 </td>
-                        <td class="border px-2 text-center"><input type="number"
-                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
-                                value="0" min="0" oninput="updateTotal(this);updateProduct(this)"></td>
-                        <td class="border px-2 text-center"><input type="number"
-                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
-                                value="0" readonly></td>
-                    </tr>
-                    <tr class="bg-white">
-                        <td class="border px-2 md:px-4 py-2 flex items-center justify-center"><img class="size-12 md:size-24" src="./images/product-featured-26.jpg" alt="Sparkler" class="w-16 h-16"></td>
-                        <td class="border px-2 md:px-4 py-2 text-center">Sparkler B</td>
-                        <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
-                        <td class="border px-2 md:px-4 py-2 text-center strike-through">Rs. <span class="line-through">150</span></td>
-                        <td class="border px-2 md:px-4 py-2 text-center">Rs. 120 </td>
-                        <td class="border px-2 text-center"><input type="number"
-                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
-                                value="0" min="0" oninput="updateTotal(this);updateProduct(this)"></td>
-                        <td class="border px-2 text-center"><input type="number"
-                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
-                                value="0" readonly></td>
-                    </tr>
-                </tbody>
-            </table>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-111.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">BOBBY CRACKLINGS
+                                                        SPARKLERS 7CM(10PCS)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">50</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 25 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-295.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">12CM 4 COLOUR SPARKLERS
+                                                        (10PCS)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">100</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 50 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-112.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">GOLD SPARKLERS
+                                                        15CM(10PCS)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">150</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 75 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-114.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">GOLD SPARKLERS
+                                                        30CM(5PCS)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">150</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 75 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-119.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">RED SPARKLERS
+                                                        15CM(10PCS)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">160</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 80 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-122.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">LEMON TREE SPARKLERS
+                                                        15CM(10PCS)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">160</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 80 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                                <td class="border px-2 md:px-4 py-2 flex items-center justify-center">
+                                                        <img class="size-12 md:size-24"
+                                                                src="https://standardcrackers.com/assets/uploads/product-featured-113.jpg"
+                                                                alt="Sparkler" class="w-16 h-16"></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">CRACKLING SPARKLERS
+                                                        15CM(10PCS)</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">1 BOX</td>
+                                                <td class="border px-2 md:px-4 py-2 text-center strike-through">₹ <span
+                                                                class="line-through">170</span></td>
+                                                <td class="border px-2 md:px-4 py-2 text-center">₹ 85 </td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-red-600 focus:border-yellow-500 outline-0 w-12 mx-auto"
+                                                                value="0" min="0"
+                                                                oninput="updateTotal(this);updateProduct(this)"></td>
+                                                <td class="border px-2 text-center"><input type="number"
+                                                                class="text-center text-lg font-semibold border-2 rounded-sm py-2 border-gray-600 outline-0  w-12 mx-auto"
+                                                                value="0" readonly></td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+                <div class="flex justify-end items-end pr-14 py-8">
+                        <a href="#" onclick="alertAmount()"> <button
+                                        class="bg-red-500 hover:bg-yellow-500 transition py-2 m-3 px-4 md:px-6 text-white text-xl rounded-md text-center cursor-pointer">Proceed
+                                        to
+                                        Checkout</button>
+                        </a>
+                </div>
         </div>
-        <div class="flex justify-end items-end pr-14 py-8">
-            <a href="check.html" onclick="alertAmount()"> <button
-                    class="bg-red-500 hover:bg-yellow-500 transition py-2 m-3 px-4 md:px-6 text-white text-xl rounded-md text-center cursor-pointer">Proceed to
-                    Checkout</button>
-            </a>
-        </div>
-    </div>
-    <script src="./javascripts/script.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./javascripts/script.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
 </body>
 
 </html>

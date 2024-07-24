@@ -19,7 +19,7 @@
     </div>
     <div class="p-12 ">
         <h2 class="text-black font-bold text-lg md:text-xl md:w-2/3 tracking-wider text-center">Order Details [Minimum
-            of Rs.3000]</h2>
+            of ₹3000]</h2>
         <hr class="my-6">
         <div class="overflow-x-auto md:overflow-x-hidden">
             <div class="imgContent border-2">
@@ -40,7 +40,7 @@
                     <tfoot class="bg-red-500">
                         <tr>
                             <td colspan="5" class="border px-4 py-2 text-center text-white font-semibold">Total</td>
-                            <td colspan="1" class="border px-4 py-2 text-center text-white font-semibold">Rs. 0</td>
+                            <td colspan="1" class="border px-4 py-2 text-center text-white font-semibold">₹ 0</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -68,8 +68,8 @@
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Phone Number</td>
-                            <td class="border px-4 py-2"><input type="tel" id="phone"
-                                    class="w-full outline-0 p-2 border rounded-sm" class="font-semibold" required></td>
+                            <td class="border px-4 py-2"><input type="tel" id="phone" pattern="[0-9+]*"
+                                 oninput="validatePhone(this);"   class="w-full outline-0 p-2 border rounded-sm" class="font-semibold" required></td>
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Address</td>
@@ -79,39 +79,53 @@
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Shipping Type</td>
                             <td class="border px-4 py-2">
-                                <label class="font-semibold mx-4 cursor-pointer"><input type="radio" id="shipping"
-                                        value="office" class="mr-2" onchange="toggleLocationRow()" required>Office
-                                    Delivery</label>
-                                <label class="font-semibold mx-4 cursor-pointer"><input type="radio" id="shipping"
-                                        value="door" class="mr-2" onchange="toggleLocationRow()" required>Door
-                                    Delivery</label>
+                                <label class="font-semibold mx-4 cursor-pointer">
+                                    <input type="radio" id="shipping" name="shipping" value="office" class="mr-2" onchange="toggleLocationRow()" required>Office Delivery
+                                </label>
+                                <label class="font-semibold mx-4 cursor-pointer">
+                                    <input type="radio" id="shipping" name="shipping" value="door" class="mr-2" onchange="toggleLocationRow()" required>Door Delivery
+                                </label>
+                                
                             </td>
                         </tr>
                         <tr id="locationRow" class="bg-white hidden">
                             <td class="border px-4 py-2 font-semibold">State / City / Zip Code</td>
                             <td class="border px-4 py-2 flex flex-col gap-y-2">
-                                <select class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer"
+                                <input class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer"
                                     placeholder="City" id="city">
-                                    <option value="" disabled selected>City</option>
-                                    <option value="new mhjehli">New Dehli</option>
-                                    <option value="Mumbai">Mumbai</option>
-                                    <option value="Bengaluru">Bengaluru</option>
-                                    <option value="Chennai">Chennai</option>
-                                    <option value="Hyderabad">Hyderabad</option>
-                                    <option value="Kolkata">Kolkata</option>
-                                    <option value="Jaipur">Jaipur</option>
-                                    <option value="ahmedabad">Ahmedabad</option>
-                                    <option value="other">Other</option>
-                                </select>
                                 <select class="w-full outline-0 p-2 border rounded-sm mr-2 cursor-pointer"
                                     placeholder="State" id="state">
                                     <option value="" disabled selected>State</option>
-                                    <option value="punjab">Punjab</option>
-                                    <option value="sindh">Sindh</option>
-                                    <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa</option>
-                                    <option value="balochistan">Balochistan</option>
-                                    <option value="gilgit-baltistan">Gilgit-Baltistan</option>
-                                    <option value="azad-jammu-kashmir">Azad Jammu & Kashmir</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
                                 </select>
                                 <input type="number" id="zip" class=" w-full outline-0 p-2 border rounded-sm"
                                     placeholder="Zip Code" required>
@@ -123,23 +137,23 @@
                     <tbody id="secondTbody">
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Subtotal</td>
-                            <td id="subtotalPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for subtotal -->
+                            <td id="subtotalPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for subtotal -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Shipping</td>
-                            <td id="shippingPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for shipping -->
+                            <td id="shippingPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for shipping -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Discount</td>
-                            <td id="discountPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for discount -->
+                            <td id="discountPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for discount -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Coupon(-)</td>
-                            <td id="couponPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for coupon -->
+                            <td id="couponPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for coupon -->
                         </tr>
                         <tr class="bg-white">
                             <td class="border px-4 py-2 font-semibold">Total</td>
-                            <td id="totalPrice" class="border px-4 py-2">Rs 0</td> <!-- Add id for total -->
+                            <td id="totalPrice" class="border px-4 py-2">₹ 0</td> <!-- Add id for total -->
                         </tr>
 
                     </tbody>
@@ -147,8 +161,8 @@
             </div>
 
 
-            <h3 class="text-sm text-red-500 font-semibold my-6 mx-2">Notes : COD Not Available!, Card Payments Contact-
-                +1234567890</h3>
+            <h3 class="text-sm text-red-500 font-semibold my-6 mx-2">Notes : COD Not Available, Card Payments Contact: 
+                +91&nbsp;9988735678</h3>
         </div>
         <div class="flex flex-col justify-center items-center md:items-end md:pr-14 pb-6">
             <div class="flex flex-col justify-center items-center md:items-end md:pr-14 pb-6">
@@ -169,6 +183,7 @@
     </form>
     <script src="javascripts/mail.js"></script>
     <script src="javascripts/checkout.js"></script>
+    <script src="javascripts/validate.js"></script>
 
 </body>
 
